@@ -1,0 +1,79 @@
+ *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.098);
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        margin-bottom: 20px;
+        color: #ccc;
+    }
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.3em;
+        }
+        .container {
+            padding: 25px;
+        }
+        button {
+            font-size: 0.9em;
+        }
+        textarea {
+            font-size: 0.9em;
+        }
+    }
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #5a5a5a;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        color: #fafafa;
+        resize: none;
+        font-size: 1em;
+        outline: none;
+    }
+    textarea::placeholder {
+        color: #eae8e8;
+    }
+    button {
+        margin-top: 25px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #251af5;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #1e14c1;
+        transition: all 0.3s ease;
+        transform: scale(1.05);
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #f5f5f5;
+    }
+    #output {
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #f4f4f4;
+    }

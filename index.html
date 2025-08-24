@@ -4,88 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: black;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .container {
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.098);
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-        margin-bottom: 20px;
-        color: #ccc;
-    }
-    @media (max-width: 600px) {
-        h1 {
-            font-size: 1.3em;
-        }
-        .container {
-            padding: 25px;
-        }
-        button {
-            font-size: 0.9em;
-        }
-        textarea {
-            font-size: 0.9em;
-        }
-    }
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #5a5a5a;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        color: #fafafa;
-        resize: none;
-        font-size: 1em;
-        outline: none;
-    }
-    textarea::placeholder {
-        color: #eae8e8;
-    }
-    button {
-        margin-top: 25px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        background-color: #251af5;
-        color: white;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #1e14c1;
-        transition: all 0.3s ease;
-        transform: scale(1.05);
-    }
-    #result {
-        margin-top: 20px;
-        font-size: 1.2em;
-        color: #f5f5f5;
-    }
-    #output {
-        margin-top: 20px;
-        font-size: 1.2em;
-        color: #f4f4f4;
-    }
-</style>
 <body>
     <div class="container">
         <h1>Typing Speed Checker</h1>
@@ -95,42 +15,6 @@
         <div id="result"></div>
         <div id="output"></div>
     </div>
-    <script>
-        const startButton = document.getElementById('startButton');
-        const textInput = document.getElementById('textInput');
-        const result = document.getElementById('result');
-        const output = document.getElementById('output');
-
-        let startTime, endTime;
-
-        startButton.addEventListener('click', () => {
-            textInput.value = '';
-            result.textContent = '';
-            startTime = new Date();
-            if (textInput.value.trim() === '') {
-                result.textContent = 'Please start typing to see your speed.';
-            }
-            textInput.focus();
-        });
-
-        textInput.addEventListener('input', () => {
-            if (!startTime) return;
-            endTime = new Date();
-            const timeTaken = (endTime - startTime) / 1000; 
-            const wordsTyped = textInput.value.split(' ').length;
-            const wpm = Math.round((wordsTyped / timeTaken) * 60);
-            result.textContent = `Your typing speed is ${wpm} words per minute.`;
-        });
-
-        stopButton.addEventListener('click', () => {
-            textInput.disabled = true;
-            endTime = new Date();
-            const timeTaken = (endTime - startTime) / 1000; 
-            const wordsTyped = textInput.value.split(' ').length;
-            const wpm = Math.round((wordsTyped / timeTaken) * 60);
-            result.style.display = 'none';
-            output.textContent += ' Your typing speed is ' + wpm + ' words per minute.';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
